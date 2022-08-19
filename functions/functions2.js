@@ -219,7 +219,6 @@ function load_itemslist() {
                     rarity,
                     color,
                     level,
-                    loc,
                     description_fr,
                     description_en,
                     "https://vertylo.github.io/wakassets/items/" + jobitem['definition']['graphicParameters']['gfxId'].toString() + ".png"
