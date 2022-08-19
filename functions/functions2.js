@@ -196,16 +196,21 @@ function load_itemslist() {
                 }
                 //fin 0.1
 
-                let description_fr =  "*" + jobitem['description']["fr"] + "*";
-              
-                let description_en =  "*" + jobitem['description']["en"] + "*";
-
+                let description_fr = ""
+                if(jobitem['description'] != null) {
+                    description_fr = "*" + jobitem['description']["fr"] + "*";
+                }
+                let description_en = ""
+                if(jobitem['description'] != null) {
+                    description_en = "*" + jobitem['description']["en"] + "*";
+                }
 
                 let name_fr, name_en;
                 if(jobitem["title"]) {
                     name_fr = jobitem["title"]["fr"];
                     name_en = jobitem["title"]["en"];
                 }
+
 
                 //console.log(sorted_stats_en)
                 list_jobitems.push(new JobItem.JobItem(
@@ -214,6 +219,7 @@ function load_itemslist() {
                     rarity,
                     color,
                     level,
+                    loc,
                     description_fr,
                     description_en,
                     "https://vertylo.github.io/wakassets/items/" + jobitem['definition']['graphicParameters']['gfxId'].toString() + ".png"
